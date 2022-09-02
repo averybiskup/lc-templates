@@ -38,3 +38,16 @@ while q:
         if cur.right:
             q.append(cur.right)
 
+# rotate matrix right
+
+R = len(box)
+C = len(box[0])
+
+rot_box = [[''] * R for _ in range(C)]
+
+for i in range(R):
+    for j in range(C):
+        rot_box[j][i] = box[i][j]
+        
+for i in range(len(rot_box)):
+    rot_box[i] = rot_box[i][::-1]
