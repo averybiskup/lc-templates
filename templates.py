@@ -51,3 +51,14 @@ for i in range(R):
         
 for i in range(len(rot_box)):
     rot_box[i] = rot_box[i][::-1]
+
+# intersect between two times
+l1, r1 = slots1[i]
+l2, r2 = slots2[j]
+
+intersect_start = max(l1, l2)
+intersect_end   = max(r1, r2)
+
+duration = intersect_end - intersect_start
+
+
