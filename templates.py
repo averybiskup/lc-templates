@@ -61,4 +61,13 @@ intersect_end   = max(r1, r2)
 
 duration = intersect_end - intersect_start
 
+# reverse linked list
+prev, cur = None, head
+while cur:
+    tmp = cur.next
+    cur.next = prev
+    prev = cur
+    cur = tmp
+
+
 
