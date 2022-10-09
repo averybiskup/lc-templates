@@ -69,5 +69,36 @@ while cur:
     prev = cur
     cur = tmp
 
+# Trie
+
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.end = False
+
+class TrieNode():
+    def __init__(self):
+        self.root = TrieNode()
+
+    def add(self, word):
+        cur = self.root
+
+        for ch in word:
+            if ch not in cur.children:
+                cur.children[ch] = TrieNode()
+            cur = cur.children[ch]
+
+        cur.end = True
+
+    def search(self, word):
+        cur = self.root
+
+        for ch in word:
+            if ch not in cur.children:
+                return False
+            cur = cur.children[ch]
+
+        return cur.end
+
 
 
